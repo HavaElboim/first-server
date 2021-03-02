@@ -1,0 +1,23 @@
+{
+  "name": "first-server",
+  "version": "1.0.0",
+  "description": "application running on localhost server to accept user name age and languages",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HavaElboim/first-server.git"
+  },
+  "keywords": [
+    "server"
+  ],
+  "author": "Hava Elboim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HavaElboim/first-server/issues"
+  },
+  "homepage": "https://github.com/HavaElboim/first-server#readme"
+}
