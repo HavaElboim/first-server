@@ -13,6 +13,9 @@ if (process.argv.length < 6) {
 } else {
   // 2. correct number of args. destruct into variables:
   let [filename, username, age] = [...process.argv.slice(2)];
+  // or instead could do:
+  // const[, , filename, name, age, ...langs] = process.argv;
+  // the ...langs is a rest tnat puts the rest of the args into an array
   let languagesArray = [...process.argv.slice(5)];
   console.log(
     `name of file to write: ${filename}, username: ${username}, age: ${age}, languages: ${languagesArray}`
@@ -31,12 +34,20 @@ if (process.argv.length < 6) {
   try {
     const str = fs.readFileSync(filename, "utf-8");
     users = JSON.parse(str);
+    // or, because the file is a json, could use:
+    // users = require("./"+fileName);
+    // then do not need to do JSON.parse b/c the require reads the file correctly
+    // Or could convert to template literal using JSrefactor extension:
+    // users = require("./${fileName}");
     console.log(`current users in file: ${users}`);
   } catch {
     users = [];
   }
 
   console.log(`current contents of file: ${users}`);
+
+  // need to add id for user! :
+  user.id = users.length + 1;
 
   //5. add new user
   users.push(user);
